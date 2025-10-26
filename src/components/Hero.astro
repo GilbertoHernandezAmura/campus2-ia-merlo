@@ -1,0 +1,61 @@
+---
+const alliance = "Una alianza UNLC + UNSAM";
+const title = "PROGRAMA INTENSIVO DE INTELIGENCIA ARTIFICIAL";
+const date = "FEB.2026";
+const subtitle = "¿Vas a quedarte mirando o vas a ser parte?";
+const description =
+    "Una semana para sumergirse en el futuro en el corazón de las sierras, la Universidad Nacional de los Comechingones abre su campus para una experiencia única: aprender, crear y pensar con inteligencia artificial.";
+---
+
+<section id="inicio" class="hero min-h-[85vh] py-12 md:py-20">
+    <div
+        class="hero-content flex-col lg:flex-row-reverse w-full max-w-6xl p-4 md:p-8"
+    >
+        <div
+            class="w-full lg:w-1/2 lg:pl-12 relative pb-[56.25%] h-0 overflow-hidden"
+        >
+            <iframe
+                class="w-full h-full absolute overflow-hidden border-none left-0 top-0"
+                src="https://geo.dailymotion.com/player.html?video=x9sogby"
+                allowfullscreentitle="Dailymotion Video Player"
+                allow="web-share"></iframe>
+        </div>
+
+        <div class="w-full lg:w-1/2 lg:pr-12 text-center lg:text-left">
+            <p class="text-sm font-semibold uppercase text-secondary mb-2">
+                {alliance} • {date}
+            </p>
+
+            <h1
+                class="text-5xl md:text-6xl font-extrabold text-neutral leading-tight mb-4"
+            >
+                {title}
+            </h1>
+
+            <p class="text-xl md:text-2xl font-light text-neutral mb-4 italic">
+                {subtitle}
+            </p>
+
+            <p class="text-lg text-gray-600 mb-8">
+                {description}
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+                <a
+                    href="#inscripcion"
+                    class="btn btn-primary btn-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105"
+                >
+                    Inscribirse
+                </a>
+                <a
+                    href="#programa"
+                    class="btn btn-outline btn-primary btn-lg border-2 hover:bg-primary hover:text-white transition duration-300"
+                >
+                    Conocer Más
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

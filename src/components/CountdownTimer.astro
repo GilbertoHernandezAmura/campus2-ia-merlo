@@ -1,0 +1,122 @@
+---
+// Define la fecha objetivo: 1 de febrero de 2026, a las 00:00:00
+const targetDate = new Date("2026-02-01T00:00:00").getTime();
+
+// Clases de Tailwind para los elementos del reloj
+// CAMBIO: Aumentado el tamaño del texto y agregado font-bold
+const timeUnitClasses =
+    "font-mono text-neutral bg-base-100 p-2 rounded-lg shadow-inner text-2xl md:text-3xl font-bold";
+const labelClasses = "text-xs font-semibold uppercase text-neutral mt-1";
+---
+
+<div
+    id="countdown-timer-container"
+    class="w-full bg-accent py-3 sticky top-0 z-40 transition-all duration-500 ease-in-out"
+    data-visible="true"
+>
+    <div
+        class="max-w-6xl mx-auto px-4 md:px-8 flex justify-between items-center"
+    >
+        <div class="flex items-center space-x-4 flex-grow justify-center">
+            <p class="text-lg font-bold text-neutral hidden sm:block">
+                ¡Comienza la inmersión en IA!
+            </p>
+
+            <div id="countdown-display" class="flex space-x-3 items-end">
+                <div class="flex flex-col items-center">
+                    <span id="days" class={timeUnitClasses}>00</span>
+                    <span class={labelClasses}>Días</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span id="hours" class={timeUnitClasses}>00</span>
+                    <span class={labelClasses}>Horas</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span id="minutes" class={timeUnitClasses}>00</span>
+                    <span class={labelClasses}>Min.</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span id="seconds" class={timeUnitClasses}>00</span>
+                    <span class={labelClasses}>Seg.</span>
+                </div>
+            </div>
+        </div>
+
+        <button
+            id="close-timer"
+            class="btn btn-circle btn-sm btn-ghost text-neutral hover:bg-neutral hover:text-accent ml-4"
+            aria-label="Cerrar contador"
+        >
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+    </div>
+</div>
+
+<script define:vars={{ targetDate }} is:inline>
+    const countdown = (target) => {
+        // La fecha objetivo es 1 de febrero de 2026, 00:00:00
+        const targetTime = target;
+
+        const units = {
+            days: document.getElementById("days"),
+            hours: document.getElementById("hours"),
+            minutes: document.getElementById("minutes"),
+            seconds: document.getElementById("seconds"),
+        };
+        const container = document.getElementById("countdown-timer-container");
+        const finalMessage = "¡El programa ha comenzado!";
+        const displayContainer = document.getElementById("countdown-display");
+
+        const updateTimer = () => {
+            const now = new Date().getTime();
+            const distance = targetTime - now;
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                if (container && displayContainer) {
+                    // Reemplazar la cuenta atrás por el mensaje final
+                    container.querySelector(".flex-grow").innerHTML =
+                        `<p class="text-center w-full text-lg font-bold text-neutral">${finalMessage}</p>`;
+                }
+                return;
+            }
+
+            // Cálculo de tiempo
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+            );
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Función auxiliar para añadir el cero inicial
+            const format = (num) => String(num).padStart(2, "0");
+
+            if (units.days) units.days.innerText = format(d);
+            if (units.hours) units.hours.innerText = format(h);
+            if (units.minutes) units.minutes.innerText = format(m);
+            if (units.seconds) units.seconds.innerText = format(s);
+        };
+
+        const timerInterval = setInterval(updateTimer, 1000);
+        updateTimer(); // Ejecutar inmediatamente para evitar el parpadeo inicial
+    };
+
+    // 1. Iniciar la cuenta atrás
+    countdown(targetDate);
+
+    // 2. Control de Cierre
+    const closeButton = document.getElementById("close-timer");
+    const timerContainer = document.getElementById("countdown-timer-container");
+
+    closeButton?.addEventListener("click", () => {
+        // Usamos clases de Tailwind para ocultar suavemente
+        timerContainer.classList.add("opacity-0", "-translate-y-full");
+        setTimeout(() => {
+            timerContainer.style.display = "none";
+        }, 500); // Coincide con la duración de la transición
+    });
+</script>

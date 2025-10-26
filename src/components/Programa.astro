@@ -1,0 +1,197 @@
+---
+// Contenido del programa (ejemplo basado en el folleto)
+const moduleSections = [
+    {
+        title: "IA en la Producción y Comunicación",
+        details:
+            "Una mirada integral sobre la inteligencia artificial y su impacto cultural, educativo y tecnológico. Herramientas concretas para incorporar IA en proyectos personales o profesionales.",
+    },
+    {
+        title: "Pensamiento Crítico y Ética",
+        details:
+            "No se trata sólo de usar IA. Se trata de entenderla, cuestionarla y crear con ella. Reflexión sobre cómo la tecnología debe servir al conocimiento y al bien común.",
+    },
+    {
+        title: "Laboratorio y Experimentación",
+        details:
+            "Un entorno de aprendizaje colaborativo, con enfoque en la práctica y la creatividad. Creación de imágenes, videos, textos y proyectos que integran inteligencia humana y artificial.",
+    },
+    {
+        title: "Experiencia Interdisciplinaria",
+        details:
+            "El programa convoca a estudiantes, docentes e investigadores de ciencia, arte, educación, comunicación, diseño y filosofía. No se requiere conocimiento previo en informática.",
+    },
+];
+
+// Información del profesor (extraída del folleto)
+const professor = {
+    name: "Ezequiel Álvarez",
+    role: "Profesor",
+    quote: "La IA es el futuro. ¿Vas a quedarte mirando o vas a ser parte?",
+};
+
+// Preguntas Frecuentes (FAQs)
+const faqs = [
+    {
+        question: "¿Necesito conocimientos previos de programación?",
+        answer: "No hace falta venir de la informática: lo importante es tener curiosidad, apertura y ganas de explorar cómo la IA puede potenciar cada campo del conocimiento.",
+    },
+    {
+        question: "¿Qué tipo de certificación obtengo?",
+        answer: "Obtendrás una Certificación conjunta de la Universidad Nacional de los Comechingones (UNLC) y la Universidad Nacional de San Martín (UNSAM).",
+    },
+    {
+        question: "¿Dónde se realiza el programa?",
+        answer: "El programa se lleva a cabo en el Campus de la UNLC en Villa de Merlo, San Luis, un entorno natural ideal para una pausa activa.",
+    },
+    {
+        question: "¿Cuánto dura el programa?",
+        answer: "Es un programa intensivo de una semana. No termina cuando finaliza: deja ideas, vínculos y una nueva manera de pensar.",
+    },
+];
+---
+
+<section id="programa" class="py-16 md:py-24 bg-base-100">
+    <!-- bg-base-100 -->
+    <div class="max-w-6xl mx-auto px-4 md:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-primary mb-3">
+                Programa Intensivo
+            </h2>
+            <p class="text-xl text-neutral font-light">
+                Una inmersión total en el futuro de la inteligencia artificial.
+            </p>
+        </div>
+
+        <div
+            class="max-w-4xl mx-auto mb-20 text-center border-2 border-gray-200 p-8 rounded-xl shadow-lg bg-white"
+        >
+            <div class="flex justify-center items-center gap-10 mb-6">
+                <img
+                    src="/logos/unlc.svg"
+                    alt="Logo UNLC"
+                    class="h-16 md:h-32 w-auto"
+                />
+
+                <span class="text-4xl text-neutral font-extrabold">+</span>
+
+                <img
+                    src="/logos/unsam.svg"
+                    alt="Logo UNSAM"
+                    class="h-16 md:h-32 w-auto"
+                />
+            </div>
+
+            <h3 class="text-3xl font-bold text-neutral mb-4">
+                Una Alianza Estratégica
+            </h3>
+            <p class="text-lg text-gray-700 mb-6">
+                El Programa Intensivo de IA es una iniciativa de la Universidad
+                Nacional de los Comechingones (UNLC) y el International Center
+                for Advanced Studies de la Universidad Nacional de San Martín
+                (UNSAM). Esta alianza fortalece la cooperación entre
+                instituciones que apuestan por la formación avanzada y el
+                pensamiento crítico en torno a la IA.
+            </p>
+
+            <div
+                class="inline-flex items-center p-3 bg-primary text-base-100 rounded-lg shadow-xl"
+            >
+                <span class="text-xl font-bold uppercase tracking-wider">
+                    Certificación Conjunta UNLC + UNSAM
+                </span>
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h3
+                class="text-3xl font-bold text-neutral mb-10 text-center border-b-2 border-secondary inline-block pb-2"
+            >
+                Ejes Temáticos del Programa
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {
+                    moduleSections.map((section, index) => (
+                        <div class="p-6 bg-gray-50 rounded-lg shadow-md border-l-4 border-primary hover:border-accent transition duration-300">
+                            <div class="flex items-center mb-2">
+                                <span class="text-xl font-extrabold text-primary mr-3">{`0${index + 1}`}</span>
+                                <h4 class="text-xl font-semibold text-neutral">
+                                    {section.title}
+                                </h4>
+                            </div>
+                            <p class="text-gray-600">{section.details}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <h3
+                class="text-3xl font-bold text-neutral mb-8 text-center border-b-2 border-secondary inline-block pb-2"
+            >
+                Equipo Docente Destacado
+            </h3>
+
+            <div
+                class="card lg:card-side bg-neutral text-base-100 shadow-xl overflow-hidden max-w-4xl mx-auto transform transition duration-500 hover:scale-[1.01]"
+            >
+                <figure
+                    class="lg:w-1/3 bg-gray-700 flex items-center justify-center p-6"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-24 h-24 text-primary"
+                        viewBox="0 0 512 512"
+                        ><path
+                            d="M256 256c-52.9 0-96-43.1-96-96S203.1 64 256 64s96 43.1 96 96-43.1 96-96 96zM425.6 464c-22.3-39.2-70.3-64-119.6-64h-100c-49.3 0-97.3 24.8-119.6 64H425.6z"
+                            fill="currentColor"></path></svg
+                    >
+                </figure>
+
+                <div class="card-body lg:w-2/3">
+                    <h4 class="text-2xl font-bold text-primary">
+                        {professor.name}
+                    </h4>
+                    <p class="text-lg text-gray-300 mb-4">{professor.role}</p>
+
+                    <blockquote
+                        class="text-xl italic border-l-4 border-accent pl-4 text-gray-100"
+                    >
+                        "{professor.quote}"
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3
+                class="text-3xl font-bold text-neutral mb-8 text-center border-b-2 border-secondary inline-block pb-2"
+            >
+                Preguntas Frecuentes (FAQ)
+            </h3>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                {
+                    faqs.map((faq, index) => (
+                        // Usamos el componente 'collapse' de daisyUI
+                        <div class="collapse collapse-arrow bg-base-200 hover:bg-gray-200 transition duration-200">
+                            <input
+                                type="radio"
+                                name="my-accordion"
+                                checked={index === 0}
+                            />
+                            <div class="collapse-title text-xl font-medium text-neutral">
+                                {faq.question}
+                            </div>
+                            <div class="collapse-content text-gray-700">
+                                <p>{faq.answer}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

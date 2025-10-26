@@ -1,28 +1,39 @@
 ---
 import "../styles/global.css";
+import CountdownTimer from "../components/CountdownTimer.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Beneficios from "../components/Beneficios.astro";
+import Programa from "../components/Programa.astro";
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="es" data-theme="mytheme">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		/>
+		<title>Programa Intensivo de Inteligencia Artificial</title>
 	</head>
-	<body>
-		<div class="hero bg-base-200 min-h-screen">
-			<div class="hero-content text-center">
-				<div class="max-w-md">
-					<h1 class="text-5xl font-bold">Astro</h1>
-					<p class="py-6">
-						Provident cupiditate voluptatem et in. Quaerat fugiat ut
-						assumenda excepturi exercitationem quasi. In deleniti
-						eaque aut repudiandae et a id nisi.
-					</p>
-					<button class="btn btn-primary">Get Started</button>
-				</div>
-			</div>
-		</div>
+
+	<body class="ai-background-pattern bg-base-100 text-neutral antialiased">
+		<CountdownTimer />
+		<Navbar />
+		<Hero />
+		<Beneficios />
+		<Programa />
 	</body>
+	<style>
+		.ai-background-pattern {
+			background-image: url("/ia-pattern.svg");
+			background-repeat: repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+	</style>
 </html>
