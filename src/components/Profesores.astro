@@ -1,0 +1,90 @@
+---
+// Información detallada de los docentes (Datos proporcionados)
+// NOTA: Recuerda reemplazar /images/profesores/fotoX.jpg con tus archivos recortados.
+import soloveyImg from "../img/profesores/guillermo-solovey.png";
+import alvarezImg from "../img/profesores/ezequiel-alvarez.png";
+import caridiImg from "../img/profesores/ines-caridi.png";
+import palmazImg from "../img/profesores/pablo-palmaz.png";
+import sanchezImg from "../img/profesores/federico-sanchez.png";
+import svarcImg from "../img/profesores/marcela-svarc.png";
+import rodriguezImg from "../img/profesores/daniela-rodriguez.png";
+
+const professors = [
+    {
+        name: "Prof. Ezequiel Álvarez",
+        specialty: "Director ICAS / Desarrollador Machine Learning",
+        affiliation: "UNSAM, CONICET",
+        image: alvarezImg.src,
+    },
+    {
+        name: "Prof. Guillermo Solovey",
+        specialty:
+            "Director del Instituto del Cálculo (UBA) / Investigador CONICET",
+        affiliation: "UBA, CONICET, UTDT",
+        image: soloveyImg.src,
+    },
+    {
+        name: "Prof. Inés Caridi",
+        specialty: "Investigadora CONICET / Desarrolladora Machine Learning",
+        affiliation: "UBA, CONICET",
+        image: caridiImg.src,
+    },
+    {
+        name: "Prof. Pablo Palmaz",
+        specialty: "SubSecretario de Políticas de Gobierno / Prof. Posgrado",
+        affiliation: "UNSAM",
+        image: palmazImg.src,
+    },
+    {
+        name: "Prof. Federico Sánchez",
+        specialty: "Director ITEDA / Investigador CONICET",
+        affiliation: "UNSAM-CNEA, CONICET",
+        image: sanchezImg.src,
+    },
+    {
+        name: "Prof. Marcela Svarc",
+        specialty: "Directora Dpto. Matemática y Ciencia / Dra. en Matemáticas",
+        affiliation: "Universidad de San Andrés, UBA",
+        image: svarcImg.src,
+    },
+    {
+        name: "Prof. Daniela Rodríguez",
+        specialty: "Estadística Matemática",
+        affiliation: "Universidad Torcuato di Tella",
+        image: rodriguezImg.src,
+    },
+];
+---
+
+<div class="mb-20">
+    <h3
+        class="text-3xl font-bold text-neutral mb-8 text-center border-b-2 border-secondary inline-block pb-2"
+    >
+        Equipo Docente
+    </h3>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {
+            professors.map((prof) => (
+                <div class="card bg-gray-50 p-4 shadow-xl text-center hover:shadow-2xl transition duration-300">
+                    <figure class="mx-auto mb-3 w-28 h-28 rounded-full overflow-hidden border-3 border-primary shadow-lg">
+                        <img
+                            src={prof.image}
+                            alt={`Foto de ${prof.name}`}
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </figure>
+
+                    <h4 class="text-lg font-bold text-neutral leading-tight mb-1">
+                        {prof.name}
+                    </h4>
+                    <p class="text-sm font-semibold text-primary leading-snug mb-1">
+                        {prof.specialty}
+                    </p>
+                    <p class="text-xs text-gray-600">{prof.affiliation}</p>
+                </div>
+            ))
+        }
+    </div>
+</div>

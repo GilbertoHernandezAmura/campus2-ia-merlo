@@ -1,0 +1,49 @@
+---
+// Preguntas Frecuentes (FAQs) - Se mantiene igual
+const faqs = [
+    {
+        question: "¿Necesito conocimientos previos de programación?",
+        answer: "No hace falta venir de la informática: lo importante es tener curiosidad, apertura y ganas de explorar cómo la IA puede potenciar cada campo del conocimiento.",
+    },
+    {
+        question: "¿Qué tipo de certificación obtengo?",
+        answer: "Obtendrás una Certificación conjunta de la Universidad Nacional de los Comechingones (UNLC) y la Universidad Nacional de San Martín (UNSAM).",
+    },
+    {
+        question: "¿Dónde se realiza el programa?",
+        answer: "El programa se lleva a cabo en el Campus de la UNLC en Villa de Merlo, San Luis, un entorno natural ideal para una pausa activa.",
+    },
+    {
+        question: "¿Cuánto dura el programa?",
+        answer: "Es un programa intensivo de una semana. No termina cuando finaliza: deja ideas, vínculos y una nueva manera de pensar.",
+    },
+];
+---
+
+<div>
+    <h3
+        class="text-3xl font-bold text-neutral mb-8 text-center border-b-2 border-secondary inline-block pb-2"
+    >
+        Preguntas Frecuentes (FAQ)
+    </h3>
+
+    <div class="max-w-4xl mx-auto space-y-4">
+        {
+            faqs.map((faq, index) => (
+                <div class="collapse collapse-arrow bg-base-200 hover:bg-gray-200 transition duration-200">
+                    <input
+                        type="radio"
+                        name="my-accordion"
+                        checked={index === 0}
+                    />
+                    <div class="collapse-title text-xl font-medium text-neutral">
+                        {faq.question}
+                    </div>
+                    <div class="collapse-content text-gray-700">
+                        <p>{faq.answer}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>

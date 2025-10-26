@@ -1,0 +1,64 @@
+---
+import alvarezImg from "../img/profesores/ezequiel-alvarez.png";
+import palmazImg from "../img/profesores/pablo-palmaz.png";
+import agustinaImg from "../img/profesores/agustina-rodriguez-saa.png";
+
+// Información de los organizadores (Datos proporcionados y Actualizados con imágenes)
+const organizadores = [
+    {
+        name: "Rec. Agustina Rodríguez Sáa",
+        role: "Rectora",
+        affiliation: "Universidad Nacional de Los Comechingones",
+        image: agustinaImg.src, // RUTA IMPORTADA
+    },
+    {
+        name: "Prof. Ezequiel Álvarez",
+        role: "Director ICAS",
+        affiliation: "UNSAM",
+        image: alvarezImg.src, // Reutilizando la importación de Ezequiel
+    },
+    {
+        name: "Prof. Pablo Palmaz",
+        role: "Director LIIDH",
+        affiliation: "UNSAM",
+        image: palmazImg.src, // Reutilizando la importación de Pablo
+    },
+];
+
+// ... (resto del frontmatter: faqs)
+---
+
+<div class="mb-20">
+    <h3
+        class="text-3xl font-bold text-neutral mb-8 text-center border-b-2 border-secondary inline-block pb-2"
+    >
+        Organizan
+    </h3>
+
+    <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-xl"
+    >
+        {
+            organizadores.map((org) => (
+                <div class="text-center p-4 bg-gray-50 rounded-lg shadow-md transition duration-300 hover:shadow-xl">
+                    <figure class="mx-auto mb-3 w-36 h-36 rounded-full overflow-hidden border-4 border-accent shadow-lg">
+                        <img
+                            src={org.image}
+                            alt={`Foto de ${org.name}`}
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </figure>
+
+                    <h4 class="text-lg font-bold text-neutral leading-tight mb-1">
+                        {org.name}
+                    </h4>
+                    <p class="text-sm font-semibold text-secondary leading-snug mb-1">
+                        {org.role}
+                    </p>
+                    <p class="text-xs text-gray-600">{org.affiliation}</p>
+                </div>
+            ))
+        }
+    </div>
+</div>
