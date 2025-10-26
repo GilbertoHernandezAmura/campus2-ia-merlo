@@ -1,66 +1,99 @@
 ---
+// Importaciones de imágenes
+import cartelImg from "../img/experiencia/cartel-merlo.jpg";
+import claseAfueraImg from "../img/experiencia/clase-afuera-1.jpg";
+import claseAfuera2Img from "../img/experiencia/clase-afuera-2.jpg";
+import entradaUnlcImg from "../img/experiencia/entrada-unlc.jpg";
+import claseLabImg from "../img/experiencia/clase-en-lab-informatica.jpg";
+import miradorSol from "../img/experiencia/mirador-sol.jpg";
+import participantesImg from "../img/experiencia/terraza.jpg";
+import entregaDiplomaImg from "../img/experiencia/entrega-diploma.jpg";
+import cierreActividadImg from "../img/experiencia/cierre-actividad.jpg";
+
 // Contenido extraído del folleto para la sección Experiencia
 const title = "Experiencia Inmersiva: El Campus como Laboratorio";
 const subtitle = "Una semana para volver al origen y mirar hacia adelante.";
 const description =
-    "Merlo, con su entorno natural y su energía creativa, ofrece el contexto ideal para hacer esa pausa activa: una semana para volver al origen y mirar hacia adelante. Cada edición amplía la comunidad de quienes experimentan con IA desde la universidad pública, con la convicción de que la tecnología debe servir al conocimiento, la cultura y el bien común.";
+    "Merlo, con su entorno natural y su energía creativa, ofrece el contexto ideal para hacer esa pausa activa: una semana para volver al origen y mirar hacia adelante.";
+const communityText =
+    "Cada edición amplía la comunidad de quienes experimentan con IA desde la universidad pública, con la convicción de que la tecnología debe servir al conocimiento, la cultura y el bien común.";
+
+// Nuevo ID de video
+const experienceVideoId = "x9spjo8";
 
 // Placeholder para las rutas de las fotos de la edición pasada.
-// NOTA: Coloca tus imágenes en la carpeta public/images/experiencia/
 const galleryPhotos = [
+    { src: cartelImg.src, alt: "Excursion a las sierras" },
+    { src: claseAfueraImg.src, alt: "Clase al aire libre" },
+    { src: claseAfuera2Img.src, alt: "Clase al aire libre" },
     {
-        src: "/images/experiencia/foto1.jpg",
-        alt: "Estudiantes trabajando en grupo al aire libre",
+        src: entradaUnlcImg.src,
+        alt: "Foto del grupo con vista del edificio principal de la UNLC en Merlo",
     },
     {
-        src: "/images/experiencia/foto2.jpg",
-        alt: "Taller o clase con vista a las sierras",
+        src: claseLabImg.src,
+        alt: "Foto del grupo en el laboratorio de informática de la UNLC en Merlo",
     },
+    { src: miradorSol.src, alt: "Vista desde el mirador del sol en Merlo" },
     {
-        src: "/images/experiencia/foto3.jpg",
-        alt: "Sesión de debate y reflexión en el campus",
+        src: participantesImg.src,
+        alt: "Grupo de participantes en la terraza de la UNLC",
     },
+    { src: entregaDiplomaImg.src, alt: "Entrega de diploma a estudiante" },
     {
-        src: "/images/experiencia/foto4.jpg",
-        alt: "Vista del edificio de la UNLC en Merlo",
-    },
-    {
-        src: "/images/experiencia/foto5.jpg",
-        alt: "Participantes interactuando con tecnología",
-    },
-    {
-        src: "/images/experiencia/foto6.jpg",
-        alt: "Grupo de asistentes en un descanso activo",
+        src: cierreActividadImg.src,
+        alt: "Cierre de actividad con dia de campo y entrega de diplomas",
     },
 ];
+
+// JSON con los datos de las fotos para el script
+const photoData = JSON.stringify(
+    galleryPhotos.map((p) => ({ src: p.src, alt: p.alt })),
+);
 ---
 
-<section
-    id="experiencia"
-    class="py-16 md:py-24 bg-gray-100 ai-background-pattern"
->
+<section id="experiencia" class="py-16 md:py-24 ai-background-pattern">
     <div class="max-w-6xl mx-auto px-4 md:px-8">
-        <div class="text-center mb-12 md:mb-16">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-neutral mb-3">
-                {title}
-            </h2>
-            <p
-                class="text-xl text-secondary font-semibold uppercase tracking-wider mb-4"
-            >
-                {subtitle}
-            </p>
-            <p class="text-lg max-w-4xl mx-auto text-gray-700">
-                {description}
-            </p>
-        </div>
+        <div class="flex flex-col-reverse lg:flex-row gap-8 mb-16">
+            <div class="w-full lg:w-1/2 shadow-2xl rounded-xl overflow-hidden">
+                <div class="w-full h-full relative pb-[56.25%] overflow-hidden">
+                    <iframe
+                        class="w-full h-full absolute overflow-hidden border-none left-0 top-0"
+                        src={`https://geo.dailymotion.com/player.html?video=${experienceVideoId}&queue=false&autoplay=false`}
+                        allowfullscreentitle="Dailymotion Video Player"
+                        allow="web-share"></iframe>
+                </div>
+            </div>
 
-        <div
-            class="text-center max-w-4xl mx-auto mb-16 p-6 border-l-4 border-primary bg-base-100 shadow-lg"
-        >
-            <p class="text-xl font-semibold text-neutral italic">
-                "Aprender con IA es aprender a pensar distinto: entre
-                algoritmos, ideas y conversaciones."
-            </p>
+            <div
+                class="w-full lg:w-1/2 lg:pl-4 text-center lg:text-left flex flex-col justify-center"
+            >
+                <h2
+                    class="text-4xl md:text-5xl font-extrabold text-neutral mb-3"
+                >
+                    {title}
+                </h2>
+                <p
+                    class="text-xl text-secondary font-semibold uppercase tracking-wider mb-4"
+                >
+                    {subtitle}
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    {description}
+                </p>
+                <p class="text-md text-gray-600 italic">
+                    {communityText}
+                </p>
+
+                <div
+                    class="mt-6 p-4 border-l-4 border-primary bg-base-100 shadow-md"
+                >
+                    <p class="text-xl font-semibold text-neutral italic">
+                        "Aprender con IA es aprender a pensar distinto: entre
+                        algoritmos, ideas y conversaciones."
+                    </p>
+                </div>
+            </div>
         </div>
 
         <h3
@@ -71,8 +104,12 @@ const galleryPhotos = [
 
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {
-                galleryPhotos.map((photo) => (
-                    <div class="relative overflow-hidden rounded-lg shadow-xl transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl">
+                galleryPhotos.map((photo, index) => (
+                    <button
+                        class="relative overflow-hidden rounded-lg shadow-xl transition duration-300 transform hover:scale-[1.03] hover:shadow-2xl cursor-pointer focus:outline-none"
+                        onclick={`showGalleryModal(${index})`}
+                        aria-label={`Ver foto ${index + 1}`}
+                    >
                         <div
                             class="w-full h-0 relative"
                             style="padding-top: 75%; background-color: #eee;"
@@ -85,9 +122,85 @@ const galleryPhotos = [
                             />
                         </div>
                         <div class="absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 hover:opacity-10 pointer-events-none" />
-                    </div>
+                    </button>
                 ))
             }
         </div>
     </div>
 </section>
+
+<dialog
+    id="gallery_modal"
+    class="modal modal-bottom sm:modal-middle bg-black/80 backdrop-blur-sm"
+>
+    <div class="modal-box w-full max-w-3xl p-0 shadow-2xl bg-black/0">
+        <div class="w-full h-full relative flex items-center justify-center">
+            <img
+                id="modal-image"
+                src=""
+                alt="Galería de la experiencia"
+                class="w-auto max-h-[85vh] object-contain rounded-lg shadow-xl"
+            />
+
+            <form method="dialog">
+                <button
+                    class="btn btn-circle btn-sm btn-accent absolute top-4 right-4 z-10 text-neutral"
+                >
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </form>
+
+            <button
+                id="prev-btn"
+                class="btn btn-circle btn-sm btn-primary absolute left-4 hidden lg:flex"
+            >
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+                id="next-btn"
+                class="btn btn-circle btn-sm btn-primary absolute right-4 hidden lg:flex"
+            >
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <p
+                id="modal-caption"
+                class="absolute bottom-0 p-3 w-full bg-black/60 text-base-100 text-sm rounded-b-lg text-center"
+            >
+            </p>
+        </div>
+    </div>
+</dialog>
+
+<script define:vars={{ photoData }} is:inline>
+    const photos = JSON.parse(photoData);
+    let currentIndex = 0;
+    const modal = document.getElementById("gallery_modal");
+    const modalImage = document.getElementById("modal-image");
+    const modalCaption = document.getElementById("modal-caption");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    // Función para actualizar el contenido del modal
+    const updateModal = (index) => {
+        currentIndex = (index + photos.length) % photos.length; // Asegura que el índice esté dentro del rango
+        const photo = photos[currentIndex];
+        modalImage.src = photo.src;
+        modalImage.alt = photo.alt;
+        modalCaption.textContent = photo.alt;
+    };
+
+    // Función para abrir el modal desde cualquier botón de la galería
+    window.showGalleryModal = (startIndex) => {
+        updateModal(startIndex);
+        if (modal) {
+            modal.showModal(); // Muestra el modal de daisyUI
+        }
+    };
+
+    // Manejadores de eventos para la navegación
+    prevBtn?.addEventListener("click", () => updateModal(currentIndex - 1));
+    nextBtn?.addEventListener("click", () => updateModal(currentIndex + 1));
+
+    // Opcional: Cerrar con la tecla ESC (comportamiento nativo de <dialog>)
+</script>

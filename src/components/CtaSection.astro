@@ -1,0 +1,48 @@
+---
+// Define los textos y enlaces
+const title = "No te quedes mirando, sé parte del futuro.";
+const subtitle = "¡El Programa Intensivo de IA comienza en Febrero 2026!";
+
+// --- IMPORTANTE: REEMPLAZA ESTOS PLACEHOLDERS CON TUS ENLACES REALES ---
+// 1. Enlace al Google Form de Inscripción
+const googleFormLink = "https://forms.gle/TUFORMULARIO_DE_INSCRIPCION";
+
+// 2. Enlace al PDF del folleto alojado en Google Drive
+const driveBrochureLink =
+    "https://drive.google.com/file/d/ID_DE_TU_BROCHURE/view?usp=sharing";
+// NOTA: Para forzar la descarga, podrías añadir /export?format=pdf&dl=1 al final del enlace de Drive (si lo tienes configurado correctamente).
+// Sin embargo, para visualizar/descargar el 'view?usp=sharing' es más común.
+// -----------------------------------------------------------------------
+---
+
+<section id="cta" class="py-16 md:py-20 bg-primary text-base-100">
+    <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+            {title}
+        </h2>
+
+        <p class="text-xl font-light mb-8">
+            {subtitle}
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+                href={googleFormLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-lg btn-accent text-neutral shadow-2xl hover:bg-yellow-400 transition duration-300 transform hover:scale-[1.03]"
+            >
+                Inscribirse Ahora
+            </a>
+
+            <a
+                href={driveBrochureLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-lg btn-outline text-base-100 border-base-100 hover:bg-base-100 hover:text-primary transition duration-300"
+            >
+                Ver/Descargar Folleto
+            </a>
+        </div>
+    </div>
+</section>

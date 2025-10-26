@@ -1,0 +1,66 @@
+---
+// Obtenemos el año actual
+const currentYear = new Date().getFullYear();
+
+// Enlace del desarrollador
+const developerGithub = "https://github.com/GilbertoHernandezAmura";
+const developerName = "Gilberto Hernández Amura";
+
+// Información de la UNLC
+const unlcWeb = "www.unlc.edu.ar";
+const unlcAddress =
+    "Héroes de Malvinas 1500, Villa de Merlo, San Luis, Argentina. C.P 5881";
+---
+
+<footer class="footer p-10 bg-base-200 text-neutral border-t border-gray-300">
+    <div
+        class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"
+    >
+        <aside>
+            <p class="text-xl font-bold text-primary mb-2">
+                Universidad Nacional de los Comechingones
+            </p>
+            <p class="text-sm text-gray-700">
+                {unlcAddress}
+            </p>
+            <p class="text-sm mt-1">
+                Web: <a
+                    href={`https://${unlcWeb}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline">{unlcWeb}</a
+                >
+            </p>
+        </aside>
+
+        <nav
+            class="flex flex-col items-center md:items-start order-first md:order-none"
+        >
+            <p class="text-lg font-semibold text-neutral mb-2">
+                Derechos Reservados
+            </p>
+            <p class="text-sm text-gray-600">
+                &copy; {currentYear} UNLC - Universidad Nacional de los Comechingones.
+            </p>
+            <p class="text-sm text-gray-600">Todos los derechos reservados.</p>
+        </nav>
+
+        <nav class="flex flex-col items-center md:items-end">
+            <p class="text-lg font-semibold text-neutral mb-2">
+                Desarrollo Web
+            </p>
+            <p class="text-sm text-gray-600 text-center md:text-right">
+                Hecho con <i class="fa-solid fa-mug-saucer text-accent"></i> y <i
+                    class="fa-solid fa-heart text-red-500"></i> por
+            </p>
+            <a
+                href={developerGithub}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline font-medium text-sm mt-1"
+            >
+                {developerName}
+            </a>
+        </nav>
+    </div>
+</footer>
