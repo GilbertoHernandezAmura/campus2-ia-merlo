@@ -17,7 +17,7 @@ const unlcAddress =
         class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"
     >
         <aside
-            class="flex flex-col items-center md:items-start order-first md:order-none w-full"
+            class="flex flex-col items-center md:items-start order-first md:order-0 w-full"
         >
             <p
                 class="text-xl font-bold text-primary mb-2 w-full text-center md:text-left"
@@ -28,7 +28,7 @@ const unlcAddress =
                 {unlcAddress}
             </p>
             <p class="text-sm mt-1">
-                Web: <a
+                <a
                     href={`https://${unlcWeb}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -38,7 +38,7 @@ const unlcAddress =
         </aside>
 
         <nav
-            class="flex flex-col items-center md:items-start order-first md:order-none w-full"
+            class="flex flex-col items-center md:items-start order-first md:order-0 w-full"
         >
             <p class="text-lg font-semibold text-neutral mb-2">
                 Derechos Reservados

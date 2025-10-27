@@ -17,18 +17,21 @@ const professors = [
         specialty: "Director ICAS / Desarrollador Machine Learning",
         affiliation: "UNSAM, CONICET",
         image: alvarezImg.src,
+        link: "https://icas.unsam.edu.ar/personalwebs/personalweb-sequi/",
     },
     {
         name: "Prof. Daniel Fraiman",
         specialty: "Director Ms. Ciencia de Datos (UDESA)",
         affiliation: "UDESA",
         image: fraimanImg.src,
+        link: "https://udesa.edu.ar/cuerpo-docente/daniel-fraiman-borrazas",
     },
     {
         name: "Prof. Dr. Pablo Terren",
         specialty: "CTO AI-Sunrise",
         affiliation: "AI-Sunrise",
         image: terrenImg.src,
+        link: "https://ai-sunrise.com/",
     },
     // {
     //     name: "Prof. Guillermo Solovey",
@@ -87,24 +90,26 @@ const professors = [
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {
             professors.map((prof) => (
-                <div class="card bg-gray-50 p-4 shadow-xl text-center hover:shadow-2xl transition duration-300">
-                    <figure class="mx-auto mb-3 w-28 h-28 rounded-full overflow-hidden border-3 border-primary shadow-lg">
-                        <img
-                            src={prof.image}
-                            alt={`Foto de ${prof.name}`}
-                            class="w-full h-full object-cover"
-                            loading="lazy"
-                        />
-                    </figure>
+                <a href={prof.link} target="_blank" rel="noopener noreferrer">
+                    <div class="card bg-gray-50 p-4 shadow-xl text-center hover:shadow-2xl transition duration-300">
+                        <figure class="mx-auto mb-3 w-28 h-28 rounded-full overflow-hidden border-3 border-primary shadow-lg">
+                            <img
+                                src={prof.image}
+                                alt={`Foto de ${prof.name}`}
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                            />
+                        </figure>
 
-                    <h4 class="text-lg font-bold text-neutral leading-tight mb-1">
-                        {prof.name}
-                    </h4>
-                    <p class="text-sm font-semibold text-primary leading-snug mb-1">
-                        {prof.specialty}
-                    </p>
-                    <p class="text-xs text-gray-600">{prof.affiliation}</p>
-                </div>
+                        <h4 class="text-lg font-bold text-neutral leading-tight mb-1">
+                            {prof.name}
+                        </h4>
+                        <p class="text-sm font-semibold text-primary leading-snug mb-1">
+                            {prof.specialty}
+                        </p>
+                        <p class="text-xs text-gray-600">{prof.affiliation}</p>
+                    </div>
+                </a>
             ))
         }
     </div>
