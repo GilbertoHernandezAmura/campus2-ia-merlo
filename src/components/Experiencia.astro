@@ -19,7 +19,8 @@ const communityText =
     "Cada edición amplía la comunidad de quienes experimentan con IA desde la universidad pública, con la convicción de que la tecnología debe servir al conocimiento, la cultura y el bien común.";
 
 // Nuevo ID de video
-const experienceVideoId = "x9spjo8";
+const experienceVideo =
+    "https://drive.google.com/file/d/14xzfs4FnDw39hxa1L-QNpjod1d4Zkm62/preview";
 
 // Placeholder para las rutas de las fotos de la edición pasada.
 const galleryPhotos = [
@@ -56,12 +57,22 @@ const photoData = JSON.stringify(
     <div class="max-w-6xl mx-auto px-4 md:px-8">
         <div class="flex flex-col-reverse lg:flex-row gap-8 mb-16">
             <div class="w-full lg:w-1/2 shadow-2xl rounded-xl overflow-hidden">
-                <div class="w-full h-full relative pb-[56.25%] overflow-hidden">
+                <div
+                    class="w-full h-full relative pb-[56.25%] overflow-hidden rounded-2xl shadow-2xl"
+                >
                     <iframe
                         class="w-full h-full absolute overflow-hidden border-none left-0 top-0"
-                        src={`https://geo.dailymotion.com/player.html?video=${experienceVideoId}&queue=false&autoplay=false`}
-                        allowfullscreentitle="Dailymotion Video Player"
-                        allow="web-share"></iframe>
+                        src=`${experienceVideo}`
+                        allowfullscreen
+                        allow="autoplay"
+                        loading="lazy"></iframe>
+                    <!-- <iframe
+                        class="w-full h-full absolute overflow-hidden border-none left-0 top-0"
+                        src={`https://geo.dailymotion.com/player.html?video=${experienceVideoId}&loop=true`}
+                        allowfullscreen
+                        title="Dailymotion Video Player"
+                        allow="autoplay; fullscreen; picture-in-picture; web-share"
+                    ></iframe> -->
                 </div>
             </div>
 
