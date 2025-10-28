@@ -10,6 +10,8 @@ const date = "FEB.2026";
 const subtitle = "¿Vas a quedarte mirando o vas a ser parte?";
 const description =
     "Una semana para sumergirse en el futuro en el corazón de las sierras, la Universidad Nacional de los Comechingones abre su campus para una experiencia única: aprender, crear y pensar con inteligencia artificial.";
+const linkForm =
+    "https://docs.google.com/forms/d/e/1FAIpQLSebQcHGRdKBRYJtmzqGa_HcUQnavyZveXXGbifC8JiVJgrjnA/viewform";
 
 // Enlace de Google Drive
 const driveVideoLink =
@@ -55,7 +57,8 @@ const driveVideoLink =
                     class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                 >
                     <a
-                        href="#inscripcion"
+                        href={linkForm}
+                        target="_blank"
                         class="btn btn-primary btn-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105"
                     >
                         Inscribirse
