@@ -3,6 +3,9 @@ import alvarezImg from "../img/profesores/ezequiel-alvarez.png";
 import palmazImg from "../img/profesores/pablo-palmaz.png";
 import agustinaImg from "../img/profesores/agustina-rodriguez-saa.png";
 
+const organizadoresText =
+    "El evento es organizado por la Universidad Nacional de los Comechingones junto con el Instituto de Ciencias y Altos Estudios (ICAS/UNSAM) y la Universidad de San Andrés (UDESA). Las autoridades académicas que lideran la organización son la Rectora Agustina Rodríguez Sáa y el Profesor Ezequiel Álvarez.";
+
 // Información de los organizadores (Datos proporcionados y Actualizados con imágenes)
 const organizadores = [
     {
@@ -32,6 +35,10 @@ const organizadores = [
     >
         Organizan
     </h3>
+
+    <p class="text-lg text-gray-600 mb-8">
+        {organizadoresText}
+    </p>
 
     <div
         class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto p-8 bg-white rounded-lg"
