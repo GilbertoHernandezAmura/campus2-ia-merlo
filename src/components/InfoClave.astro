@@ -1,0 +1,113 @@
+---
+// Importación de icono de Font Awesome
+const faMapPin = "fa-solid fa-map-pin";
+const faCalendar = "fa-solid fa-calendar-alt";
+const faEnvelope = "fa-solid fa-envelope";
+const faMoneyBill = "fa-solid fa-money-bill-wave";
+
+// Información principal
+const mainTitle = "¿De qué se trata el Programa?";
+const mainDescription =
+    "El programa intensivo tiene una duración de 7 días en el que los y las estudiantes vivirán una experiencia que combina estudio, investigación, vida comunitaria y diversión, en un entorno pensado para estimular la curiosidad, el pensamiento crítico y el aprendizaje práctico guiados por un destacado cuerpo docente compuesto por investigadores, profesores y desarrolladores de las universidades más prestigiosas del país.";
+
+const organizadores =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam unde totam, quibusdam corrupti odit provident quo eos officiis maiores error autem accusamus qui iusto ducimus dolore sunt illo dolorum adipisci maxime recusandae esse tenetur id. Officia minus distinctio quibusdam totam velit, corrupti praesentium saepe, reiciendis sed nisi, aspernatur blanditiis amet!";
+
+// Datos Logísticos
+const realizationDate = "del 1 al 8 de febrero de 2026";
+const inscriptionDeadline = "hasta el 1 de diciembre de 2025";
+const contactEmail = "programa.intensivo.ia@unlc.edu.ar";
+const futureCostText =
+    "Consultar presupuesto y becas disponibles para este año.";
+---
+
+<section id="info-clave" class="py-16 bg-base-100">
+    <div class="max-w-6xl mx-auto px-4 md:px-8">
+        <h2
+            class="text-4xl md:text-5xl font-extrabold text-neutral mb-12 text-center"
+        >
+            Datos Importantes
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div
+                class="lg:col-span-2 p-6 bg-gray-50 rounded-xl shadow-lg border-l-4 border-secondary"
+            >
+                <h3 class="text-3xl font-bold text-neutral mb-4">
+                    {mainTitle}
+                </h3>
+                <p
+                    class="text-lg text-gray-700 mb-6"
+                    set:html={mainDescription}
+                />
+
+                <h4 class="text-xl font-bold text-primary mb-2">
+                    Organización y Liderazgo
+                </h4>
+                <p class="text-md text-gray-600 italic">{organizadores}</p>
+            </div>
+
+            <div class="lg:col-span-1 space-y-6">
+                <div
+                    class="p-5 bg-white rounded-lg shadow-md border-t-2 border-primary"
+                >
+                    <h4 class="text-xl font-bold text-primary mb-3">
+                        Fechas Clave
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i
+                                class={`${faCalendar} text-secondary mt-1 mr-3 flex-shrink-0`}
+                            ></i>
+                            <div>
+                                <span class="font-semibold">Realización:</span
+                                ><br />
+                                {realizationDate}
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i
+                                class={`${faCalendar} text-secondary mt-1 mr-3 flex-shrink-0`}
+                            ></i>
+                            <div>
+                                <span class="font-semibold"
+                                    >Inscripción (Límite):</span
+                                ><br />
+                                {inscriptionDeadline}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="p-5 bg-white rounded-lg shadow-md border-t-2 border-primary"
+                >
+                    <h4 class="text-xl font-bold text-primary mb-3">
+                        Contacto y Presupuesto
+                    </h4>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i
+                                class={`${faMoneyBill} text-secondary mt-1 mr-3 flex-shrink-0`}
+                            ></i>
+                            <span class="italic">{futureCostText}</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i
+                                class={`${faEnvelope} text-secondary mt-1 mr-3 flex-shrink-0`}
+                            ></i>
+                            <div>
+                                <span class="font-semibold">Email:</span><br />
+                                <a
+                                    href={`mailto:${contactEmail}`}
+                                    class="text-primary hover:underline"
+                                    >{contactEmail}</a
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
