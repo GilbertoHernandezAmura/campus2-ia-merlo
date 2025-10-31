@@ -5,6 +5,7 @@ import soloveyImg from "../img/profesores/guillermo-solovey.png";
 import alvarezImg from "../img/profesores/ezequiel-alvarez.png";
 import terrenImg from "../img/profesores/pablo-terren.jpeg";
 import fraimanImg from "../img/profesores/daniel-fraiman.png";
+import mehrnooshImg from "../img/profesores/mehrnoosh-arrar.jpg";
 import caridiImg from "../img/profesores/ines-caridi.png";
 import palmazImg from "../img/profesores/pablo-palmaz.png";
 import sanchezImg from "../img/profesores/federico-sanchez.png";
@@ -27,11 +28,18 @@ const professors = [
         link: "https://udesa.edu.ar/cuerpo-docente/daniel-fraiman-borrazas",
     },
     {
-        name: "Prof. Dr. Pablo Terren",
+        name: "Prof. Pablo Terren",
         specialty: "CTO AI-Sunrise",
         affiliation: "AI-Sunrise",
         image: terrenImg.src,
         link: "https://ai-sunrise.com/",
+    },
+    {
+        name: "Prof. Mehrnoosh Arrar",
+        specialty: "Matemática",
+        affiliation: "CONICET, UBA",
+        image: mehrnooshImg.src,
+        link: "#",
     },
     // {
     //     name: "Prof. Guillermo Solovey",
@@ -87,11 +95,11 @@ const professors = [
         Equipo Docente
     </h3>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {
             professors.map((prof) => (
                 <a href={prof.link} target="_blank" rel="noopener noreferrer">
-                    <div class="card bg-gray-50 p-4 shadow-xl text-center hover:shadow-2xl transition duration-300">
+                    <div class="card bg-gray-50 p-4 shadow-xl text-center hover:shadow-2xl transition duration-300 h-full">
                         <figure class="mx-auto mb-3 w-28 h-28 rounded-full overflow-hidden border-3 border-primary shadow-lg">
                             <img
                                 src={prof.image}
