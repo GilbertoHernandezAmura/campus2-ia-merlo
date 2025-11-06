@@ -1,0 +1,60 @@
+---
+const mediaRepercussion = [
+    {
+        source: "Clarín",
+        title: "Una Sub 20 que promete",
+        url: "https://www.clarin.com/opinion/sub-20-promete_0_9iVbzzuMx0.html",
+        icon: "fa-solid fa-newspaper",
+    },
+    {
+        source: "Universidad de San Andrés - UDESA",
+        title: "Programa Intensivo IA 2025",
+        url: "https://udesa.edu.ar/noticias/programa-intensivo-ia-2025",
+        icon: "fa-solid fa-graduation-cap",
+    },
+    {
+        source: "Colegio Nacional de Buenos Aires (CNBA - UBA)",
+        title: "Formación en tecnología: programa intensivo de IA",
+        url: "https://www.cnba.uba.ar/novedades/formacion-en-tecnologia-programa-intensivo-de-ia",
+        icon: "fa-solid fa-graduation-cap",
+    },
+    {
+        source: "Clarín",
+        title: "Guillermo Solovey: “Las personas más reflexivas son las mismas que en las redes sociales muestran más sesgo ideológico”",
+        url: "https://www.clarin.com/opinion/guillermo-solovey-personas-reflexivas-mismas-redes-sociales-muestran-sesgo-ideologico_0_YPOQ7NZ88m.html",
+        icon: "fa-solid fa-newspaper",
+    },
+];
+---
+
+<div class="mb-20">
+    <h3
+        class="text-3xl font-bold text-neutral mb-8 text-center border-b-2 border-secondary inline-block pb-2"
+    >
+        Repercusión Mediática
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {
+            mediaRepercussion.map((note) => (
+                <a
+                    href={note.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="relative block p-5 bg-white rounded-lg shadow-md border-l-4 border-accent hover:bg-gray-50 transition duration-300 transform hover:scale-[1.01]"
+                >
+                    <p class="text-xs font-semibold uppercase text-secondary mb-1">
+                        <i class={`${note.icon} mr-2`} />
+                        {note.source}
+                    </p>
+                    <h4 class="text-lg font-bold text-neutral leading-snug mb-4">
+                        {note.title}
+                    </h4>
+                    <p class="absolute bottom-2 right-3 text-sm italic text-primary">
+                        Leer Nota &rarr;
+                    </p>
+                </a>
+            ))
+        }
+    </div>
+</div>

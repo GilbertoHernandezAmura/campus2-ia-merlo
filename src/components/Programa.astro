@@ -1,17 +1,21 @@
 ---
 import FAQs from "./FAQs.astro";
 // import Alianza from "./Alianza.astro";
+import InfoClave from "../components/InfoClave.astro";
 import EjesTematicos from "./EjesTematicos.astro";
 import Organizadores from "./Organizadores.astro";
 import Profesores from "./Profesores.astro";
+import Prensa from "./Prensa.astro";
 ---
 
 <section id="programa" class="py-16 md:py-24 bg-base-100">
     <div class="max-w-6xl mx-auto px-4 md:px-8">
         <!-- <Alianza /> -->
+        <InfoClave />
         <Organizadores />
         <EjesTematicos />
         <Profesores />
+        <Prensa />
         <FAQs />
     </div>
 </section>
